@@ -1,0 +1,15 @@
+Product - Discount - Category - Stock
+
+Employees - Department
+
+Employees_Archive
+
+Order_Items
+
+Order_Details - Addresses - Payment_Details
+
+Cart_Item
+
+Shopping_Session
+
+Store_Users

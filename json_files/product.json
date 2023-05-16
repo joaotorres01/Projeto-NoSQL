@@ -1,0 +1,501 @@
+[
+    {
+        "product": {
+            "PRODUCT_ID": 1,
+            "PRODUCT_NAME": "ASUS X515-BQ26W 8GB RAM 256GB SSD",
+            "SKU": "HR278YRE",
+            "PRICE": 2399,
+            "CREATED_AT": "2022-03-10 02:27:51",
+            "LAST_MODIFIED": "2022-07-12 23:58:55",
+            "discount": {
+                "DISCOUNT_ID": 1.0,
+                "DISCOUNT_NAME": "Hits of the Week",
+                "DISCOUNT_DESC": "Weekly discount",
+                "DISCOUNT_PERCENT": 15.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-03-10 02:27:51",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 1,
+                "CATEGORY_NAME": "Computers, Laptops and Consoles"
+            },
+            "stock": {
+                "PRODUCT_ID": 1,
+                "QUANTITY": 47,
+                "MAX_STOCK_QUANTITY": 120,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 2,
+            "PRODUCT_NAME": "TV Samsung UE65A DVB",
+            "SKU": "MN621DFV",
+            "PRICE": 2449,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": "2022-07-13 00:00:01",
+            "category": {
+                "CATEGORY_ID": 2,
+                "CATEGORY_NAME": "TV and Video"
+            },
+            "stock": {
+                "PRODUCT_ID": 2,
+                "QUANTITY": 21,
+                "MAX_STOCK_QUANTITY": 60,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 3,
+            "PRODUCT_NAME": "JBL Quantum 600",
+            "SKU": "YT008BVG",
+            "PRICE": 399,
+            "CREATED_AT": "2022-06-01 02:27:56",
+            "LAST_MODIFIED": "2022-07-13 00:05:09",
+            "discount": {
+                "DISCOUNT_ID": 3.0,
+                "DISCOUNT_NAME": "Hot Promotions",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 25.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-06-01 02:27:56",
+                "MODIFIED_AT": "2022-07-14 02:28:38"
+            },
+            "category": {
+                "CATEGORY_ID": 3,
+                "CATEGORY_NAME": "Headphones and Speakers"
+            },
+            "stock": {
+                "PRODUCT_ID": 3,
+                "QUANTITY": 321,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 4,
+            "PRODUCT_NAME": "realme 8 4+64",
+            "SKU": "PQ613BSD",
+            "PRICE": 839,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 4,
+                "CATEGORY_NAME": "Smartphones and Smartwatches"
+            },
+            "stock": {
+                "PRODUCT_ID": 4,
+                "QUANTITY": 121,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 5,
+            "PRODUCT_NAME": "Samsung Galaxy A52",
+            "SKU": "TR849PQE",
+            "PRICE": 1199,
+            "CREATED_AT": "2022-03-10 02:27:51",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 1.0,
+                "DISCOUNT_NAME": "Hits of the Week",
+                "DISCOUNT_DESC": "Weekly discount",
+                "DISCOUNT_PERCENT": 15.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-03-10 02:27:51",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 4,
+                "CATEGORY_NAME": "Smartphones and Smartwatches"
+            },
+            "stock": {
+                "PRODUCT_ID": 5,
+                "QUANTITY": 169,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 6,
+            "PRODUCT_NAME": "Xiaomi Redmi Buds 3 Lite",
+            "SKU": "UT432PQE",
+            "PRICE": 86,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": "2022-05-25 00:14:12",
+            "category": {
+                "CATEGORY_ID": 3,
+                "CATEGORY_NAME": "Headphones and Speakers"
+            },
+            "stock": {
+                "PRODUCT_ID": 6,
+                "QUANTITY": 618,
+                "MAX_STOCK_QUANTITY": 1200,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 7,
+            "PRODUCT_NAME": "Samsung RS65 Fridge",
+            "SKU": "UT043LSD",
+            "PRICE": 5999,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 8,
+                "CATEGORY_NAME": "AGD"
+            },
+            "stock": {
+                "PRODUCT_ID": 7,
+                "QUANTITY": 24,
+                "MAX_STOCK_QUANTITY": 30,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 8,
+            "PRODUCT_NAME": "Apple Iphone 11",
+            "SKU": "NB923PQO",
+            "PRICE": 2499,
+            "CREATED_AT": "2022-06-01 02:27:56",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 3.0,
+                "DISCOUNT_NAME": "Hot Promotions",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 25.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-06-01 02:27:56",
+                "MODIFIED_AT": "2022-07-14 02:28:38"
+            },
+            "category": {
+                "CATEGORY_ID": 4,
+                "CATEGORY_NAME": "Smartphones and Smartwatches"
+            },
+            "stock": {
+                "PRODUCT_ID": 8,
+                "QUANTITY": 273,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 9,
+            "PRODUCT_NAME": "Logitech MK220",
+            "SKU": "UY840PDN",
+            "PRICE": 90,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 7,
+                "CATEGORY_NAME": "Keyboard and mouse"
+            },
+            "stock": {
+                "PRODUCT_ID": 9,
+                "QUANTITY": 771,
+                "MAX_STOCK_QUANTITY": 1200,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 10,
+            "PRODUCT_NAME": "Sharp 50BL5",
+            "SKU": "FD947OGJ",
+            "PRICE": 1490,
+            "CREATED_AT": "2022-02-15 02:28:13",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 4.0,
+                "DISCOUNT_NAME": "Black Friday",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 40.0,
+                "IS_ACTIVE_STATUS": "N",
+                "CREATED_AT": "2022-02-15 02:28:13",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 2,
+                "CATEGORY_NAME": "TV and Video"
+            },
+            "stock": {
+                "PRODUCT_ID": 10,
+                "QUANTITY": 60,
+                "MAX_STOCK_QUANTITY": 120,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 11,
+            "PRODUCT_NAME": "Asus Vivobook Pro 14",
+            "SKU": "3T34RPO2",
+            "PRICE": 5299,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": "2022-04-28 22:19:42",
+            "category": {
+                "CATEGORY_ID": 1,
+                "CATEGORY_NAME": "Computers, Laptops and Consoles"
+            },
+            "stock": {
+                "PRODUCT_ID": 11,
+                "QUANTITY": 7,
+                "MAX_STOCK_QUANTITY": 40,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 12,
+            "PRODUCT_NAME": "AOC 23PRO4",
+            "SKU": "YE04PRGS",
+            "PRICE": 1500,
+            "CREATED_AT": "2022-06-10 02:28:08",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 2.0,
+                "DISCOUNT_NAME": "Summer Sales",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 30.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-06-10 02:28:08",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 5,
+                "CATEGORY_NAME": "Monitors"
+            },
+            "stock": {
+                "PRODUCT_ID": 12,
+                "QUANTITY": 25,
+                "MAX_STOCK_QUANTITY": 60,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 13,
+            "PRODUCT_NAME": "Gigabyte GTX 2080Ti ",
+            "SKU": "3T04T843",
+            "PRICE": 2299,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 6,
+                "CATEGORY_NAME": "Computer parts"
+            },
+            "stock": {
+                "PRODUCT_ID": 13,
+                "QUANTITY": 16,
+                "MAX_STOCK_QUANTITY": 40,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 14,
+            "PRODUCT_NAME": "Acer Aspire TX Turbo 2",
+            "SKU": "DV932MNN",
+            "PRICE": 1999,
+            "CREATED_AT": "2022-03-10 02:27:51",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 1.0,
+                "DISCOUNT_NAME": "Hits of the Week",
+                "DISCOUNT_DESC": "Weekly discount",
+                "DISCOUNT_PERCENT": 15.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-03-10 02:27:51",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 1,
+                "CATEGORY_NAME": "Computers, Laptops and Consoles"
+            },
+            "stock": {
+                "PRODUCT_ID": 14,
+                "QUANTITY": 59,
+                "MAX_STOCK_QUANTITY": 60,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 15,
+            "PRODUCT_NAME": "Krups Evidence EA20",
+            "SKU": "AS64Y91M",
+            "PRICE": 1800,
+            "CREATED_AT": "2021-12-14 02:28:18",
+            "LAST_MODIFIED": "2022-02-14 00:25:52",
+            "discount": {
+                "DISCOUNT_ID": 5.0,
+                "DISCOUNT_NAME": "Holiday Sales",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 35.0,
+                "IS_ACTIVE_STATUS": "N",
+                "CREATED_AT": "2021-12-14 02:28:18",
+                "MODIFIED_AT": "2022-01-01 16:28:24"
+            },
+            "category": {
+                "CATEGORY_ID": 8,
+                "CATEGORY_NAME": "AGD"
+            },
+            "stock": {
+                "PRODUCT_ID": 15,
+                "QUANTITY": 31,
+                "MAX_STOCK_QUANTITY": 100,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 16,
+            "PRODUCT_NAME": "Apple Iphone 12 mini",
+            "SKU": "RT472POS",
+            "PRICE": 3599,
+            "CREATED_AT": "2022-06-10 02:28:08",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 2.0,
+                "DISCOUNT_NAME": "Summer Sales",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 30.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-06-10 02:28:08",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 4,
+                "CATEGORY_NAME": "Smartphones and Smartwatches"
+            },
+            "stock": {
+                "PRODUCT_ID": 16,
+                "QUANTITY": 199,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 17,
+            "PRODUCT_NAME": "Audio-Technica ATC900",
+            "SKU": "YRP23LLL",
+            "PRICE": 499,
+            "CREATED_AT": "2022-06-10 02:28:08",
+            "LAST_MODIFIED": "2022-05-19 00:28:00",
+            "discount": {
+                "DISCOUNT_ID": 2.0,
+                "DISCOUNT_NAME": "Summer Sales",
+                "DISCOUNT_DESC": NaN,
+                "DISCOUNT_PERCENT": 30.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-06-10 02:28:08",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 3,
+                "CATEGORY_NAME": "Headphones and Speakers"
+            },
+            "stock": {
+                "PRODUCT_ID": 17,
+                "QUANTITY": 29,
+                "MAX_STOCK_QUANTITY": 400,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 18,
+            "PRODUCT_NAME": "iRobot Rumba J7+",
+            "SKU": "RE056PLF",
+            "PRICE": 3299,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 8,
+                "CATEGORY_NAME": "AGD"
+            },
+            "stock": {
+                "PRODUCT_ID": 18,
+                "QUANTITY": 75,
+                "MAX_STOCK_QUANTITY": 80,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 19,
+            "PRODUCT_NAME": "Xbox Series X + Halo Infinite",
+            "SKU": "EPROL23S",
+            "PRICE": 2697,
+            "CREATED_AT": "2022-03-10 02:27:51",
+            "LAST_MODIFIED": null,
+            "discount": {
+                "DISCOUNT_ID": 1.0,
+                "DISCOUNT_NAME": "Hits of the Week",
+                "DISCOUNT_DESC": "Weekly discount",
+                "DISCOUNT_PERCENT": 15.0,
+                "IS_ACTIVE_STATUS": "Y",
+                "CREATED_AT": "2022-03-10 02:27:51",
+                "MODIFIED_AT": "NaT"
+            },
+            "category": {
+                "CATEGORY_ID": 1,
+                "CATEGORY_NAME": "Computers, Laptops and Consoles"
+            },
+            "stock": {
+                "PRODUCT_ID": 19,
+                "QUANTITY": 499,
+                "MAX_STOCK_QUANTITY": 1000,
+                "UNIT": "1PCS"
+            }
+        }
+    },
+    {
+        "product": {
+            "PRODUCT_ID": 20,
+            "PRODUCT_NAME": "BenQ GW2283",
+            "SKU": "EPPLS001",
+            "PRICE": 579,
+            "CREATED_AT": null,
+            "LAST_MODIFIED": null,
+            "category": {
+                "CATEGORY_ID": 5,
+                "CATEGORY_NAME": "Monitors"
+            },
+            "stock": {
+                "PRODUCT_ID": 20,
+                "QUANTITY": 1,
+                "MAX_STOCK_QUANTITY": 80,
+                "UNIT": "1PCS"
+            }
+        }
+    }
+]

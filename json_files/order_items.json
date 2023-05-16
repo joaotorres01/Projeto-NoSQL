@@ -1,0 +1,240 @@
+[
+    {
+        "ORDER_ITEMS_ID": 1,
+        "ORDER_DETAILS_ID": 1,
+        "PRODUCT_ID": 3,
+        "CREATED_AT": "2022-05-19 11:29:16",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 2,
+        "ORDER_DETAILS_ID": 1,
+        "PRODUCT_ID": 6,
+        "CREATED_AT": "2022-05-19 11:29:16",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 3,
+        "ORDER_DETAILS_ID": 1,
+        "PRODUCT_ID": 9,
+        "CREATED_AT": "2022-05-19 11:29:16",
+        "MODIFIED_AT": "2022-05-20 01:29:16"
+    },
+    {
+        "ORDER_ITEMS_ID": 4,
+        "ORDER_DETAILS_ID": 2,
+        "PRODUCT_ID": 11,
+        "CREATED_AT": "2022-01-05 15:29:24",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 5,
+        "ORDER_DETAILS_ID": 3,
+        "PRODUCT_ID": 17,
+        "CREATED_AT": "2022-06-08 05:29:29",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 6,
+        "ORDER_DETAILS_ID": 3,
+        "PRODUCT_ID": 1,
+        "CREATED_AT": "2022-06-08 05:29:29",
+        "MODIFIED_AT": "2022-06-08 19:29:29"
+    },
+    {
+        "ORDER_ITEMS_ID": 7,
+        "ORDER_DETAILS_ID": 4,
+        "PRODUCT_ID": 10,
+        "CREATED_AT": "2022-02-27 21:29:36",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 8,
+        "ORDER_DETAILS_ID": 4,
+        "PRODUCT_ID": 6,
+        "CREATED_AT": "2022-02-27 21:29:36",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 9,
+        "ORDER_DETAILS_ID": 5,
+        "PRODUCT_ID": 20,
+        "CREATED_AT": "2022-06-02 12:29:44",
+        "MODIFIED_AT": "2022-06-03 02:29:44"
+    },
+    {
+        "ORDER_ITEMS_ID": 10,
+        "ORDER_DETAILS_ID": 5,
+        "PRODUCT_ID": 2,
+        "CREATED_AT": "2022-06-02 12:29:44",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 11,
+        "ORDER_DETAILS_ID": 6,
+        "PRODUCT_ID": 9,
+        "CREATED_AT": "2022-07-14 20:29:50",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 12,
+        "ORDER_DETAILS_ID": 7,
+        "PRODUCT_ID": 5,
+        "CREATED_AT": "2021-10-14 09:29:56",
+        "MODIFIED_AT": "2021-10-14 23:29:56"
+    },
+    {
+        "ORDER_ITEMS_ID": 13,
+        "ORDER_DETAILS_ID": 7,
+        "PRODUCT_ID": 18,
+        "CREATED_AT": "2021-10-14 09:29:56",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 14,
+        "ORDER_DETAILS_ID": 8,
+        "PRODUCT_ID": 16,
+        "CREATED_AT": "2022-03-05 15:30:04",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 15,
+        "ORDER_DETAILS_ID": 8,
+        "PRODUCT_ID": 3,
+        "CREATED_AT": "2022-03-05 15:30:04",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 16,
+        "ORDER_DETAILS_ID": 8,
+        "PRODUCT_ID": 12,
+        "CREATED_AT": "2022-03-05 15:30:04",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 17,
+        "ORDER_DETAILS_ID": 9,
+        "PRODUCT_ID": 2,
+        "CREATED_AT": "2022-01-14 15:30:10",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 18,
+        "ORDER_DETAILS_ID": 10,
+        "PRODUCT_ID": 19,
+        "CREATED_AT": "2022-04-20 07:30:15",
+        "MODIFIED_AT": "2022-04-20 21:30:15"
+    },
+    {
+        "ORDER_ITEMS_ID": 19,
+        "ORDER_DETAILS_ID": 11,
+        "PRODUCT_ID": 7,
+        "CREATED_AT": "2021-11-05 21:30:26",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 20,
+        "ORDER_DETAILS_ID": 11,
+        "PRODUCT_ID": 18,
+        "CREATED_AT": "2021-11-05 21:30:26",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 21,
+        "ORDER_DETAILS_ID": 11,
+        "PRODUCT_ID": 11,
+        "CREATED_AT": "2021-11-05 21:30:26",
+        "MODIFIED_AT": "2021-11-06 11:30:26"
+    },
+    {
+        "ORDER_ITEMS_ID": 22,
+        "ORDER_DETAILS_ID": 11,
+        "PRODUCT_ID": 2,
+        "CREATED_AT": "2021-11-05 21:30:26",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 23,
+        "ORDER_DETAILS_ID": 12,
+        "PRODUCT_ID": 3,
+        "CREATED_AT": "2022-04-07 08:30:33",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 24,
+        "ORDER_DETAILS_ID": 13,
+        "PRODUCT_ID": 19,
+        "CREATED_AT": "2021-06-11 10:30:41",
+        "MODIFIED_AT": "2021-06-12 00:30:41"
+    },
+    {
+        "ORDER_ITEMS_ID": 25,
+        "ORDER_DETAILS_ID": 14,
+        "PRODUCT_ID": 20,
+        "CREATED_AT": "2022-04-08 04:30:51",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 26,
+        "ORDER_DETAILS_ID": 15,
+        "PRODUCT_ID": 10,
+        "CREATED_AT": "2022-04-07 15:31:06",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 27,
+        "ORDER_DETAILS_ID": 16,
+        "PRODUCT_ID": 3,
+        "CREATED_AT": "2022-04-24 05:31:11",
+        "MODIFIED_AT": "2022-04-24 19:31:11"
+    },
+    {
+        "ORDER_ITEMS_ID": 28,
+        "ORDER_DETAILS_ID": 16,
+        "PRODUCT_ID": 9,
+        "CREATED_AT": "2022-04-24 05:31:11",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 29,
+        "ORDER_DETAILS_ID": 16,
+        "PRODUCT_ID": 6,
+        "CREATED_AT": "2022-04-24 05:31:11",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 30,
+        "ORDER_DETAILS_ID": 16,
+        "PRODUCT_ID": 4,
+        "CREATED_AT": "2022-04-24 05:31:11",
+        "MODIFIED_AT": "2022-04-24 19:31:11"
+    },
+    {
+        "ORDER_ITEMS_ID": 31,
+        "ORDER_DETAILS_ID": 17,
+        "PRODUCT_ID": 15,
+        "CREATED_AT": "2022-07-05 10:31:19",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 32,
+        "ORDER_DETAILS_ID": 18,
+        "PRODUCT_ID": 15,
+        "CREATED_AT": "2022-03-10 00:31:28",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 33,
+        "ORDER_DETAILS_ID": 19,
+        "PRODUCT_ID": 13,
+        "CREATED_AT": "2022-02-28 23:31:37",
+        "MODIFIED_AT": null
+    },
+    {
+        "ORDER_ITEMS_ID": 34,
+        "ORDER_DETAILS_ID": 19,
+        "PRODUCT_ID": 13,
+        "CREATED_AT": "2022-02-28 23:31:37",
+        "MODIFIED_AT": null
+    }
+]
