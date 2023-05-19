@@ -2,7 +2,9 @@ import cx_Oracle
 import pandas as pd
 import numpy as np
 import warnings
-from py2neo import Graph, Node, Relationship
+from py2neo import Graph, Node
+# Assuming you already have a Neo4j connection established
+graph = Graph("bolt://localhost:7687", auth=("username", "password"))
 warnings.filterwarnings('ignore', 'pandas only supports SQLAlchemy connectable')
 
 #Oracle database connection
@@ -28,9 +30,9 @@ def handle_nan_and_nat(x):
     return x
 
 #Neo4j database connection
-graph = Graph("neo4j://localhost:7999", auth=("neo4j", "password"))
+graph = Graph("bolt://localhost:7687", auth=("neo4j", "mario12345"))
 
-#Example: Fetch and process product data and insert into Neo4j
+# Fetch and process product data and insert into Neo4j
 product_query = """
 SELECT p.*, d.*, pc.*, s.*
 FROM product p 
@@ -45,7 +47,6 @@ for index, row in product_df.iterrows():
         row_dict[key] = handle_nan_and_nat(row_dict[key])
     node = Node("Product", **row_dict)
     graph.create(node)
-
 
 # Fetch and process employee data and insert into Neo4j
 employee_query = """
@@ -116,41 +117,5 @@ for index, row in store_users_df.iterrows():
     node = Node("StoreUsers", **row_dict)
     graph.create(node)
 
-
-# ... Existing code for creating nodes ...
-
-# Fetch and process product data and insert into Neo4j
-product_query = "SELECT * FROM product"
-product_df = fetch_data(product_query)
-
-for index, row in product_df.iterrows():
-    row_dict = row.to_dict()
-    for key in row_dict:
-        row_dict[key] = handle_nan_and_nat(row_dict[key])
-    product_node = Node("Product", **row_dict)
-    graph.create(product_node)
-
-    # If the product has a discount
-    if not pd.isnull(row['DISCOUNT_ID']):
-        discount_node = graph.nodes.match("Discount", DISCOUNT_ID=row_dict['DISCOUNT_ID']).first()
-        if discount_node:
-            relationship = Relationship(product_node, "HAS_DISCOUNT", discount_node)
-            graph.create(relationship)
-
-    # If the product has a category
-    if not pd.isnull(row['CATEGORY_ID']):
-        category_node = graph.nodes.match("ProductCategory", CATEGORY_ID=row_dict['CATEGORY_ID']).first()
-        if category_node:
-            relationship = Relationship(product_node, "BELONGS_TO", category_node)
-            graph.create(relationship)
-
-    # If the product has stock information
-    if not pd.isnull(row['PRODUCT_ID']):
-        stock_node = graph.nodes.match("Stock", PRODUCT_ID=row_dict['PRODUCT_ID']).first()
-        if stock_node:
-            relationship = Relationship(product_node, "HAS_STOCK", stock_node)
-            graph.create(relationship)
-
-# ... Code for creating relationships for other tables ...
-
+# Close the Neo4j session and driver
 conn.close()
