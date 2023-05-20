@@ -1,15 +1,9 @@
 Product - Discount - Category - Stock
 
-Employees - Department
+Employees - Department - Employees_Archive
 
-Employees_Archive
+Order_Details - Addresses - Payment_Details - Order_Items
 
-Order_Items
-
-Order_Details - Addresses - Payment_Details
-
-Cart_Item
-
-Shopping_Session
+Shopping_Session - Cart_Item
 
 Store_Users
