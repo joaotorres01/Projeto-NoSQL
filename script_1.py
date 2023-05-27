@@ -31,11 +31,49 @@ def insert_data_into_mongo(collection_name, data):
 # Function to migrate store_users table
 def migrate_store_users():
     query = """
-        SELECT user_id, first_name, middle_name, last_name, phone_number, email, username, user_password, registered_at
-        FROM store_users
+        SELECT su.user_id, su.first_name, su.middle_name, su.last_name, su.phone_number, su.email, su.username,
+               su.user_password, su.registered_at, ss.session_id, ss.created_at AS session_created_at,
+               ss.modified_at AS session_modified_at, ci.cart_item_id, ci.product_id, ci.quantity,
+               ci.created_at AS cart_item_created_at, ci.modified_at AS cart_item_modified_at
+        FROM store_users su
+        LEFT JOIN shopping_session ss ON su.user_id = ss.user_id
+        LEFT JOIN cart_item ci ON ss.session_id = ci.session_id
     """
     store_users_data = fetch_data_from_oracle(query)
-    insert_data_into_mongo('Users', store_users_data)
+    
+    store_users = {}
+    for data in store_users_data:
+        user_id = data['USER_ID']
+        
+        if user_id not in store_users:
+            store_users[user_id] = {
+                'user_id': user_id,
+                'first_name': data['FIRST_NAME'],
+                'middle_name': data['MIDDLE_NAME'],
+                'last_name': data['LAST_NAME'],
+                'phone_number': data['PHONE_NUMBER'],
+                'email': data['EMAIL'],
+                'username': data['USERNAME'],
+                'user_password': data['USER_PASSWORD'],
+                'registered_at': data['REGISTERED_AT'],
+                'shopping_session': {
+                    'session_id': data['SESSION_ID'],
+                    'created_at': data['SESSION_CREATED_AT'],
+                    'modified_at': data['SESSION_MODIFIED_AT'],
+                    'cart_items': []
+                }
+            }
+        
+        if data['CART_ITEM_ID']:
+            store_users[user_id]['shopping_session']['cart_items'].append({
+                'cart_item_id': data['CART_ITEM_ID'],
+                'product_id': data['PRODUCT_ID'],
+                'quantity': data['QUANTITY'],
+                'created_at': data['CART_ITEM_CREATED_AT'],
+                'modified_at': data['CART_ITEM_MODIFIED_AT']
+            })
+    
+    insert_data_into_mongo('Users', list(store_users.values()))
 
 # Function to migrate product_categories table
 def migrate_product_categories():
@@ -56,40 +94,6 @@ def migrate_product():
     """
     product_data = fetch_data_from_oracle(query)
     insert_data_into_mongo('Product', product_data)
-
-# Function to migrate shopping_session table
-def migrate_shopping_session():
-    query = """
-        SELECT ss.session_id, ss.user_id, ss.created_at, ss.modified_at,
-               ci.cart_item_id, ci.product_id, ci.quantity, ci.created_at, ci.modified_at
-        FROM shopping_session ss
-        INNER JOIN cart_item ci ON ss.session_id = ci.session_id
-    """
-    session_data = fetch_data_from_oracle(query)
-    
-    shopping_sessions = {}
-    for data in session_data:
-        session_id = data['SESSION_ID']
-        
-        if session_id not in shopping_sessions:
-            shopping_sessions[session_id] = {
-                'session_id': data['SESSION_ID'],
-                'user_id': data['USER_ID'],
-                'created_at': data['CREATED_AT'],
-                'modified_at': data['MODIFIED_AT'],
-                'cart_items': []
-            }
-        
-        shopping_sessions[session_id]['cart_items'].append({
-            'cart_item_id': data['CART_ITEM_ID'],
-            'product_id': data['PRODUCT_ID'],
-            'quantity': data['QUANTITY'],
-            'created_at': data['CREATED_AT'],
-            'modified_at': data['MODIFIED_AT']
-        })
-    
-    insert_data_into_mongo('Shopping_Session', list(shopping_sessions.values()))
-
 
 
 
@@ -139,12 +143,13 @@ def migrate_employees():
     
     insert_data_into_mongo('Employees', employees_data)
 
+#remove the id for archive (in the department)
+
 
 # Migrate data from Oracle DB to MongoDB
-#migrate_store_users()
+migrate_store_users()
 #migrate_product()
-#migrate_cart_item()
-migrate_shopping_session()
+#migrate_shopping_session()
 #migrate_order_details()
 #migrate_employees()
 

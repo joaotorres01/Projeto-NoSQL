@@ -7,3 +7,20 @@ Order_Details - Addresses - Payment_Details - Order_Items
 Shopping_Session - Cart_Item
 
 Store_Users
+
+
+{
+  "_id": { "$oid": "64726cdddd78bb4c471b426a" },
+  "EMPLOYEE_ID": 20,
+  "FIRST_NAME": "John",
+  "MIDDLE_NAME": "Doe",
+  "LAST_NAME": "Smith",
+  "DATE_OF_BIRTH": { "$date": "1990-05-15T00:00:00.000Z" },
+  "DEPARTMENT_NAME": "Engineering",
+  "HIRE_DATE": { "$date": "2022-01-10T00:00:00.000Z" },
+  "SALARY": 5000,
+  "PHONE_NUMBER": "123-456-7890",
+  "EMAIL": "johndoe@example.com",
+  "SSN_NUMBER": "123-45-6789",
+  "MANAGER_ID": 2
+}
