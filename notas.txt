@@ -4,9 +4,7 @@ Employees - Department - Employees_Archive
 
 Order_Details - Addresses - Payment_Details - Order_Items
 
-Shopping_Session - Cart_Item
-
-Store_Users
+Store_Users - Shopping_Session - Cart_Item
 
 
 {
