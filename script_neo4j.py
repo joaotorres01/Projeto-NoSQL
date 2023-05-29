@@ -3,9 +3,16 @@ import pandas as pd
 import numpy as np
 import warnings
 from py2neo import Graph, Node
+
+print('1')
+
 # Assuming you already have a Neo4j connection established
 graph = Graph("bolt://localhost:7687", auth=("username", "password"))
+
+print('2')
 warnings.filterwarnings('ignore', 'pandas only supports SQLAlchemy connectable')
+
+print('tou aqui')
 
 #Oracle database connection
 dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='xe')
