@@ -9,16 +9,21 @@ Store_Users - Shopping_Session - Cart_Item
 
 {
   "_id": { "$oid": "64726cdddd78bb4c471b426a" },
-  "EMPLOYEE_ID": 20,
-  "FIRST_NAME": "John",
-  "MIDDLE_NAME": "Doe",
-  "LAST_NAME": "Smith",
-  "DATE_OF_BIRTH": { "$date": "1990-05-15T00:00:00.000Z" },
-  "DEPARTMENT_NAME": "Engineering",
-  "HIRE_DATE": { "$date": "2022-01-10T00:00:00.000Z" },
-  "SALARY": 5000,
-  "PHONE_NUMBER": "123-456-7890",
-  "EMAIL": "johndoe@example.com",
-  "SSN_NUMBER": "123-45-6789",
-  "MANAGER_ID": 2
+  "employee_id": 20,
+  "first_name": "John",
+  "middle_name": "Doe",
+  "last_name": "Smith",
+  "date_of_birth": "1990-05-15T00:00:00.000+00:00",
+  "department": {
+    "department_id": 2,
+    "manager_id": null,
+    "department_name": "Sales",
+    "department_desc": "Responsible for sales operations"
+  },
+  "hire_date": "2021-01-10T00:00:00.000+00:00",
+  "salary": 5000,
+  "phone_number": "123-456-7890",
+  "email": "johndoe@example.com",
+  "ssn_number": "123-45-6789",
+  "manager_id": null
 }
