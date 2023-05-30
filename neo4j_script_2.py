@@ -355,16 +355,19 @@ def create_order_details_and_relationships():
         run_cypher_query(cypher_query)
 
         # Create relationship between order_items and order_details
-        order_items_query = f"SELECT order_items_id, product_id FROM order_items WHERE order_details_id = {order_details_id}"
+        order_items_query = f"SELECT order_items_id, order_details_id, product_id, created_at, modified_at FROM order_items WHERE order_details_id = {order_details_id}"
         order_items_data = fetch_data_from_oracle(order_items_query)
 
         for item_row in order_items_data:
             order_items_id = item_row['ORDER_ITEMS_ID']
+            order_details_id = item_row['ORDER_DETAILS_ID']
             product_id = item_row['PRODUCT_ID']
+            created_at = item_row['CREATED_AT']
+            modified_at = item_row['MODIFIED_AT']
 
             # Create order_items node
             cypher_query = (
-                f"CREATE (oi:OrderItems {{order_items_id: {order_items_id}}})"
+                f"CREATE (oi:OrderItems {{order_items_id: {order_items_id}, order_details_id: {order_details_id}, product_id: {product_id}, created_at: '{created_at}', modified_at: '{modified_at}'}})"
             )
             run_cypher_query(cypher_query)
 
@@ -495,6 +498,25 @@ def create_paid_relationship():
         run_cypher_query(cypher_query)
 
 
+def create_is_in_cart_item_relationship():
+    cart_items_query = """
+        SELECT product_id, cart_item_id
+        FROM cart_item
+    """
+    cart_items_data = fetch_data_from_oracle(cart_items_query)
+
+    for row in cart_items_data:
+        product_id = row['PRODUCT_ID']
+        cart_item_id = row['CART_ITEM_ID']
+
+        cypher_query = (
+            "MATCH (p:Product), (ci:Cart) "
+            f"WHERE p.product_id = {product_id} AND ci.cart_item_id = {cart_item_id} "
+            "CREATE (p)-[:IS_IN_CART_ITEM]->(ci)"
+        )
+        run_cypher_query(cypher_query)
+
+
 
 # Executar as migrações de dados
 #migrate_user_data()
@@ -512,7 +534,8 @@ def create_paid_relationship():
 #create_deliver_at_relationship()
 #create_ordered_relationship()
 #create_employees_archive_node()
-create_paid_relationship()
+#create_paid_relationship()
+#create_is_in_cart_item_relationship()
 
 
 

@@ -6,6 +6,8 @@ Order_Details - Addresses - Payment_Details - Order_Items
 
 Store_Users - Shopping_Session - Cart_Item
 
+Rever o Product, parece que não tem os produtos que não tem desconto
+
 
 {
   "_id": { "$oid": "64726cdddd78bb4c471b426a" },
