@@ -13,7 +13,7 @@ mongo_db = 'Store'
 
 # Establish connections to Oracle DB and MongoDB
 oracle_conn = cx_Oracle.connect(f"{oracle_user}/{oracle_password}@{oracle_host}:{oracle_port}/{oracle_sid}")
-mongo_conn = MongoClient("mongodb+srv://mario:mario@cluster0.f3uul7o.mongodb.net/?retryWrites=true&w=majority")
+mongo_conn = MongoClient("mongodb+srv://falta os dados@cluster0.f3uul7o.mongodb.net/?retryWrites=true&w=majority") #mario mario
 mongo_db = mongo_conn[mongo_db]
 
 # Function to fetch data from Oracle DB
