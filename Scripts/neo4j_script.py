@@ -334,7 +334,7 @@ def create_deliver_at_relationship():
 
 def create_order_details_and_relationships():
     order_details_query = """
-        SELECT order_details_id, user_id, total, payment_id, delivery_adress_id
+        SELECT order_details_id, user_id, total, payment_id, delivery_adress_id, shipping_method, created_at, modified_at
         FROM order_details
     """
     order_details_data = fetch_data_from_oracle(order_details_query)
@@ -345,12 +345,15 @@ def create_order_details_and_relationships():
         total = row['TOTAL']
         payment_id = row['PAYMENT_ID']
         delivery_address_id = row['DELIVERY_ADRESS_ID']
+        shipping_method = row['SHIPPING_METHOD']
+        o_created_at = row['CREATED_AT']
+        o_modified_at = row['MODIFIED_AT']
 
         # Create order_details node
         cypher_query = (
             f"CREATE (od:OrderDetails {{order_details_id: {order_details_id}, "
             f"user_id: {user_id}, total: {total}, payment_id: {payment_id}, "
-            f"delivery_address_id: {delivery_address_id}}})"
+            f"delivery_address_id: {delivery_address_id}, shipping_method: '{shipping_method}', created_at: '{o_created_at}', modified_at: '{o_modified_at}'}})"
         )
         run_cypher_query(cypher_query)
 
@@ -517,25 +520,47 @@ def create_is_in_cart_item_relationship():
         run_cypher_query(cypher_query)
 
 
+def create_works_in_relationship():
+    employee_department_query = """
+        SELECT employee_id, department_id
+        FROM employees
+    """
+    employee_department_data = fetch_data_from_oracle(employee_department_query)
+
+    for row in employee_department_data:
+        employee_id = row['EMPLOYEE_ID']
+        department_id = row['DEPARTMENT_ID']
+
+        cypher_query = (
+            "MATCH (e:Employee), (d:Department) "
+            f"WHERE e.employee_id = {employee_id} AND d.department_id = {department_id} "
+            "CREATE (e)-[:WORKS_IN]->(d)"
+        )
+        run_cypher_query(cypher_query)
+
+
+
 
 # Executar as migrações de dados
-migrate_user_data()
-migrate_session_data()
-migrate_cart_data()
-migrate_address_data()
-migrate_category_data()
-migrate_product_data()
-migrate_discount_data()
-migrate_payment_data()
-migrate_department_data()
-migrate_employee_data()
-migrate_stock_data()
+#migrate_user_data()
+#migrate_session_data()
+#migrate_cart_data()
+#migrate_address_data()
+#migrate_category_data()
+#migrate_product_data()
+#migrate_discount_data()
+#migrate_payment_data()
+#migrate_department_data()
+#migrate_employee_data()
+#migrate_stock_data()
 create_order_details_and_relationships()
 create_deliver_at_relationship()
 create_ordered_relationship()
 create_employees_archive_node()
 create_paid_relationship()
 create_is_in_cart_item_relationship()
+create_works_in_relationship()
+
 
 
 
