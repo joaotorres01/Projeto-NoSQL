@@ -31,14 +31,14 @@ def insert_data_into_mongo(collection_name, data):
 # Function to migrate Product, Discount, Category, and Stock tables
 def migrate_product_data():
     product_query = """
-        SELECT p.product_id, p.product_name, p.sku, p.price,
+        SELECT p.product_id, p.product_name, p.sku, p.price, p.created_at, p.last_modified,
                c.category_id, c.category_name,
                d.discount_id, d.discount_name, d.discount_desc, d.discount_percent, d.is_active_status,
                s.quantity, s.max_stock_quantity, s.unit
-        FROM product p, product_categories c, discount d, stock s
-        WHERE p.category_id = c.category_id
-        AND p.discount_id = d.discount_id
-        AND p.product_id = s.product_id
+        FROM product p
+        JOIN product_categories c ON p.category_id = c.category_id
+        LEFT JOIN discount d ON p.discount_id = d.discount_id
+        JOIN stock s ON p.product_id = s.product_id
     """
     product_data = fetch_data_from_oracle(product_query)
 
@@ -49,16 +49,11 @@ def migrate_product_data():
             'product_name': row['PRODUCT_NAME'],
             'sku': row['SKU'],
             'price': row['PRICE'],
+            'created_at': row['CREATED_AT'],
+            'last_modified': row['LAST_MODIFIED'],
             'category': {
                 'category_id': row['CATEGORY_ID'],
                 'category_name': row['CATEGORY_NAME']
-            },
-            'discount': {
-                'discount_id': row['DISCOUNT_ID'],
-                'discount_name': row['DISCOUNT_NAME'],
-                'discount_desc': row['DISCOUNT_DESC'],
-                'discount_percent': row['DISCOUNT_PERCENT'],
-                'is_active_status': row['IS_ACTIVE_STATUS']
             },
             'stock': {
                 'quantity': row['QUANTITY'],
@@ -66,6 +61,16 @@ def migrate_product_data():
                 'unit': row['UNIT']
             }
         }
+
+        if row['DISCOUNT_ID'] is not None:  # Check if a discount exists
+            product['discount'] = {
+                'discount_id': row['DISCOUNT_ID'],
+                'discount_name': row['DISCOUNT_NAME'],
+                'discount_desc': row['DISCOUNT_DESC'],
+                'discount_percent': row['DISCOUNT_PERCENT'],
+                'is_active_status': row['IS_ACTIVE_STATUS']
+            }
+        
         products.append(product)
 
     insert_data_into_mongo('Product', products)
@@ -147,72 +152,64 @@ def migrate_order_data():
     address_query = """
         SELECT adress_id, line_1, line_2, city, zip_code, province, country
         FROM addresses
-        WHERE adress_id IN (
-            SELECT delivery_adress_id
-            FROM order_details
-        )
+        WHERE adress_id = {}
     """
-    address_data = fetch_data_from_oracle(address_query)
 
     for order in orders:
-        for row in address_data:
-            if order['delivery_address_id'] == row['ADRESS_ID']:
+        if order['delivery_address_id'] is not None:
+            address_data = fetch_data_from_oracle(address_query.format(order['delivery_address_id']))
+            if address_data:
+                address_row = address_data[0]
                 order['address'] = {
-                    'address_id': row['ADRESS_ID'],
-                    'line_1': row['LINE_1'],
-                    'line_2': row['LINE_2'],
-                    'city': row['CITY'],
-                    'zip_code': row['ZIP_CODE'],
-                    'province': row['PROVINCE'],
-                    'country': row['COUNTRY']
+                    'address_id': address_row['ADRESS_ID'],
+                    'line_1': address_row['LINE_1'],
+                    'line_2': address_row['LINE_2'],
+                    'city': address_row['CITY'],
+                    'zip_code': address_row['ZIP_CODE'],
+                    'province': address_row['PROVINCE'],
+                    'country': address_row['COUNTRY']
                 }
-                break
 
     payment_query = """
         SELECT payment_details_id, order_id, amount, provider, payment_status
         FROM payment_details
-        WHERE order_id IN (
-            SELECT order_details_id
-            FROM order_details
-        )
+        WHERE order_id = {}
     """
-    payment_data = fetch_data_from_oracle(payment_query)
 
     for order in orders:
-        for row in payment_data:
-            if order['order_id'] == row['ORDER_ID']:
+        if order['payment_id'] is not None:
+            payment_data = fetch_data_from_oracle(payment_query.format(order['payment_id']))
+            if payment_data:
+                payment_row = payment_data[0]
                 order['payment'] = {
-                    'payment_details_id': row['PAYMENT_DETAILS_ID'],
-                    'order_id': row['ORDER_ID'],
-                    'amount': row['AMOUNT'],
-                    'provider': row['PROVIDER'],
-                    'payment_status': row['PAYMENT_STATUS']
+                    'payment_details_id': payment_row['PAYMENT_DETAILS_ID'],
+                    'order_id': payment_row['ORDER_ID'],
+                    'amount': payment_row['AMOUNT'],
+                    'provider': payment_row['PROVIDER'],
+                    'payment_status': payment_row['PAYMENT_STATUS']
                 }
-                break
 
     order_items_query = """
         SELECT order_items_id, order_details_id, product_id, created_at, modified_at
         FROM order_items
-        WHERE order_details_id IN (
-            SELECT order_details_id
-            FROM order_details
-        )
+        WHERE order_details_id = {}
     """
-    order_items_data = fetch_data_from_oracle(order_items_query)
 
     for order in orders:
+        order_items_data = fetch_data_from_oracle(order_items_query.format(order['order_id']))
         for row in order_items_data:
-            if order['order_id'] == row['ORDER_DETAILS_ID']:
-                order_item = {
-                    'order_items_id': row['ORDER_ITEMS_ID'],
-                    'order_details_id': row['ORDER_DETAILS_ID'],
-                    'product_id': row['PRODUCT_ID'],
-                    'created_at': row['CREATED_AT'],
-                    'modified_at': row['MODIFIED_AT']
-                }
-                order['order_items'].append(order_item)
+            order_item = {
+                'order_items_id': row['ORDER_ITEMS_ID'],
+                'order_details_id': row['ORDER_DETAILS_ID'],
+                'product_id': row['PRODUCT_ID'],
+                'created_at': row['CREATED_AT'],
+                'modified_at': row['MODIFIED_AT']
+            }
+            order['order_items'].append(order_item)
 
-    insert_data_into_mongo('Order_Details', orders)
+    insert_data_into_mongo('Order', orders)
+
+
 
 
 
